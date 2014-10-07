@@ -1,0 +1,24 @@
+body {
+	font-family: sans-serif;
+	color: #444;
+	background: #eee;
+	margin: 40px 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.pageContainer {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid #bbb;
+	background: #fff;
+	padding: 45px 70px;
+}
+
+.mythumbnail{
+	width: 160px;
+	height:200px;
+	padding:4px;
+}

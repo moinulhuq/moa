@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>.:: Index ::.</title>
+    <link href="tree/TreeStyle.min.css" rel="stylesheet" />
+	
+    <style>
+body {
+	font-family: sans-serif;
+	color: #444;
+	background: #eee;
+	margin: 40px 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.pageContainer {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid #bbb;
+	background: #fff;
+	padding: 45px 70px;
+}
+.mythumbnail{
+	width: 160px;
+	height:200px;
+	padding:4px;
+}
+		
+    </style>
+
+
+</head>
+
+<body>
+<div id="simpleTreeContainer"></div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    <script src="tree/jsonTree.js"></script>
+
+<script>
+$(document).ready(function(){
+  
+    $.get("get_data.php",function(jsonData,status){
+      //alert("jsonData: " + jsonData + "\nStatus: " + status);
+           $('#simpleTreeContainer').jsonTree(jsonData, {
+                mandatorySelect: true,
+                selectedIdElementName: 'simpleTreeContainer',
+                selectedItemId: 'simpleTreeContainer'
+            });
+ 	  $("li").not(".parent_li").css('display','none');
+
+    });
+  
+});
+</script>
+<p><a href="scrape_data.php">Scrape Data</a></p>
+
+</body>
+
+</html>
